@@ -33,11 +33,10 @@
         }
     </style>
     <!-- Chosen Palette: Calm Harmony (Stone, Blue, Emerald) -->
-    <!-- Application Structure Plan: 이 SPA는 프로젝트 제안서의 선형적 구조(1, 2, 3...)를 따르지 않고, 사용자가 프로젝트의 핵심 가치를 쉽게 탐색할 수 있도록 주제별(Thematic) 섹션으로 재구성되었습니다. 상단 고정 탐색 바를 통해 [소개, 솔루션, 주요 기능, 기술 스택, 향후 계획] 섹션으로 즉시 이동할 수 있습니다. 이 구조는 사용자가 자신에게 가장 흥미로운 정보를 먼저 선택적으로 탐색할 수 있게 하여, 정적 문서보다 훨씬 사용자 친화적입니다. '솔루션' 섹션에는 핵심 RAG 아키텍처를 시각적으로 설명하는 HTML/CSS 다이어그램을, '기술 스택' 섹션에는 정적 테이블 대신 동적 필터링이 가능한 카드형 UI를 배치하여 상호작용성을 극대화했습니다. -->
+    <!-- Application Structure Plan: 이 SPA는 프로젝트 제안서의 선형적 구조(1, 2, 3...)를 따르지 않고, 사용자가 프로젝트의 핵심 가치를 쉽게 탐색할 수 있도록 주제별(Thematic) 섹션으로 재구성되었습니다. 상단 고정 탐색 바를 통해 [소개, 솔루션, 주요 기능, 향후 계획] 섹션으로 즉시 이동할 수 있습니다. 이 구조는 사용자가 자신에게 가장 흥미로운 정보를 먼저 선택적으로 탐색할 수 있게 하여, 정적 문서보다 훨씬 사용자 친화적입니다. '솔루션' 섹션에는 핵심 RAG 아키텍처를 시각적으로 설명하는 HTML/CSS 다이어그램을 배치했습니다. -->
     <!-- Visualization & Content Choices: 
         1.  Report Info: RAG 프로세스 설명 (섹션 2) -> Goal: Organize/Inform (복잡한 기술 흐름 설명) -> Viz: 정적 HTML/CSS 흐름도 -> Interaction: 없음 (시각적 명확성 우선). Justification: RAG의 다단계 프로세스는 텍스트보다 시각적 흐름도로 표현할 때 즉각적인 이해를 돕습니다. HTML/Tailwind만으로 구성하여 SVG/Mermaid 없이도 명확한 다이어그램을 제공합니다.
         2.  Report Info: 주요 기능 4가지 (섹션 3) -> Goal: Inform/Organize -> Viz: 2x2 그리드 카드. Interaction: CSS Hover 효과. Justification: 4가지 핵심 기능을 동일한 중요도로 나열하고 스캔하기 쉬운 그리드 레이아웃이 효과적입니다.
-        3.  Report Info: 기술 스택 테이블 (섹션 3) -> Goal: Organize/Compare (기술 스택 탐색) -> Viz: 필터링 가능한 기술 카드. Interaction: JS 클릭으로 '전체', '백엔드', '프론트엔드', '데이터' 카테고리 필터링. Justification: 정적 테이블은 모바일에서 보거나 특정 카테고리만 확인하기 어렵습니다. 동적 필터링은 사용자에게 제어권을 주어 기술 스택 탐색을 더 쉽고 인터랙티브하게 만듭니다.
         4.  Report Info: 기타 모든 텍스트 (소개, 문제, 목표 등) -> Goal: Inform -> Viz: 서식이 있는 텍스트 블록. Interaction: 없음. Justification: 프로젝트의 맥락과 배경을 제공하는 기본 텍스트입니다.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
@@ -56,7 +55,6 @@
                         <a href="#intro" class="nav-link">소개</a>
                         <a href="#solution" class="nav-link">솔루션</a>
                         <a href="#features" class="nav-link">주요 기능</a>
-                        <a href="#tech" class="nav-link">기술 스택</a>
                         <a href="#future" class="nav-link">파급 효과 및 향후 계획</a>
                     </div>
                 </div>
@@ -67,7 +65,7 @@
     <!-- Main Content -->
     <main class="container mx-auto p-4 md:p-8 space-y-16">
 
-        <!-- Section 1: Introduction (About Me & Project) - UPDATED -->
+        <!-- Section 1: Introduction (About Me & Project) -->
         <section id="intro" class="pt-16 -mt-16">
             <h2 class="text-3xl font-bold text-center mb-8">프로젝트 소개</h2>
             <div class="grid md:grid-cols-2 gap-8">
@@ -79,7 +77,7 @@
                         저는 문제 해결 중심의 사고로 사용자에게 실질적인 가치를 주는 서비스를 만드는 것을 좋아합니다. 특히 학습과 관련된 불편함을 기술로 개선하는 데 큰 흥미를 가지고 있습니다.
                     </p>
                 </div>
-                <!-- Project Overview Card - UPDATED CONTENT -->
+                <!-- Project Overview Card -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-bold mb-4 text-emerald-700">🎯 개발 배경 및 목표</h3>
                     <h4 class="text-xl font-semibold mb-2">개발 배경 (문제점 및 필요성)</h4>
@@ -187,67 +185,12 @@
             </div>
         </section>
 
-        <!-- Section 4: Tech Stack -->
-        <section id="tech" class="pt-16 -mt-16">
-            <h2 class="text-3xl font-bold text-center mb-8">🛠️ 기술 스택</h2>
-            
-            <!-- Filter Buttons -->
-            <div id="filter-buttons" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
-                <button class="tech-filter active" data-filter="all">전체 (All)</button>
-                <button class="tech-filter" data-filter="backend">백엔드 (Backend)</button>
-                <button class="tech-filter" data-filter="frontend">프론트엔드 (Frontend)</button>
-                <button class="tech-filter" data-filter="data">데이터 (Data)</button>
-                <button class="tech-filter" data-filter="llm">LLM</button>
-            </div>
-
-            <!-- Tech Stack Grid -->
-            <div id="tech-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="tech-card bg-white p-6 rounded-lg shadow-lg" data-category="backend">
-                    <h4 class="text-xl font-bold">Python (FastAPI/Flask)</h4>
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold mt-2 mb-3 px-2.5 py-0.5 rounded">백엔드</span>
-                    <p class="text-stone-600">백엔드 API 및 RAG 워크플로우를 처리합니다.</p>
-                </div>
-                
-                <div class="tech-card bg-white p-6 rounded-lg shadow-lg" data-category="llm">
-                    <h4 class="text-xl font-bold">LangChain / LlamaIndex</h4>
-                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold mt-2 mb-3 px-2.5 py-0.5 rounded">LLM</span>
-                    <p class="text-stone-600">텍스트 청킹, 임베딩, RAG 파이프라인을 구축합니다.</p>
-                </div>
-
-                <div class="tech-card bg-white p-6 rounded-lg shadow-lg" data-category="data">
-                    <h4 class="text-xl font-bold">ChromaDB / Pinecone</h4>
-                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold mt-2 mb-3 px-2.5 py-0.5 rounded">데이터</span>
-                    <p class="text-stone-600">문서 청크의 임베딩을 저장하고 고속 유사성 검색을 수행합니다.</p>
-                </div>
-
-                <div class="tech-card bg-white p-6 rounded-lg shadow-lg" data-category="frontend">
-                    <h4 class="text-xl font-bold">React (or Vue.js)</h4>
-                    <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold mt-2 mb-3 px-2.5 py-0.5 rounded">프론트엔드</span>
-                    <p class="text-stone-600">사용자 인터페이스 구현 및 파일 업로드를 처리합니다.</p>
-                </div>
-
-                <div class="tech-card bg-white p-6 rounded-lg shadow-lg" data-category="frontend">
-                    <h4 class="text-xl font-bold">Tailwind CSS</h4>
-                    <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold mt-2 mb-3 px-2.5 py-0.5 rounded">프론트엔드</span>
-                    <p class="text-stone-600">반응형 디자인 및 빠르고 일관된 UI를 구성합니다.</p>
-                </div>
-
-                <div class="tech-card bg-white p-6 rounded-lg shadow-lg" data-category="data">
-                    <h4 class="text-xl font-bold">Firebase Firestore</h4>
-                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold mt-2 mb-3 px-2.5 py-0.5 rounded">데이터</span>
-                    <p class="text-stone-600">사용자 데이터 및 파일 메타데이터를 관리합니다.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Section 5: Future Plans (Now includes Impact/파급 효과) -->
+        <!-- Section 4: Future Plans (Now includes Impact/파급 효과) -->
         <section id="future" class="pt-16 -mt-16">
             <h2 class="text-3xl font-bold text-center mb-8">🚀 파급 효과 및 향후 계획</h2>
             
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Impact Card - NEW CONTENT -->
+                <!-- Impact Card -->
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-bold mb-4 text-blue-700">📈 개발 시 파급 효과</h3>
                     <h4 class="text-xl font-semibold mb-2">학생들에게</h4>
@@ -285,30 +228,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // Tech Stack Filter Logic
-            const filterButtons = document.querySelectorAll('#filter-buttons .tech-filter');
-            const techCards = document.querySelectorAll('#tech-grid .tech-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.dataset.filter;
-
-                    // Update button active state
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    // Filter cards
-                    techCards.forEach(card => {
-                        const category = card.dataset.category;
-                        if (filter === 'all' || category === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
             // Smooth Scroll for Nav Links
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
